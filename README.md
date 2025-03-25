@@ -90,7 +90,7 @@ Each pattern folder contains:
    ```
 2. **Navigate to the project directory:**
    ```bash
-   cd leetcode-patterns-practice
+   cd dsa
    ```
 3. **Explore a pattern folder:**
    - Read the explanations in the `README.md` inside each pattern folder.
