@@ -1,21 +1,16 @@
 # Advanced Java Concepts for Technical Interviews
 
-/**
- * This document explores intermediate and advanced Java features that enable elegant, efficient
- * solutions to algorithmic problems. Understanding these concepts will help you write more maintainable,
- * concise code during high-pressure interview situations.
- */
+This document explores intermediate and advanced Java features that enable elegant, efficient
+solutions to algorithmic problems. Understanding these concepts will help you write more maintainable,
+concise code during high-pressure interview situations.
+
 
 ---
 
 ## 🔍 Generics for Interview Solutions
 
-/**
- * Generics provide compile-time type safety and eliminate the need for explicit casting.
- * In interview settings, they let you create reusable algorithms and data structures.
- * 
- * @since Java 5
- */
+Generics provide compile-time type safety and eliminate the need for explicit casting.
+In interview settings, they let you create reusable algorithms and data structures.
 
 ### ✅ Why Use Generics in Interview Code?
 - Create type-safe data structures
@@ -23,11 +18,10 @@
 - Avoid type casting and potential runtime errors
 
 ### 📌 Example: Generic Maximum Finder
-/**
- * A generic class for finding the maximum element in an array of comparable elements.
- * 
- * @param <T> the type of elements in the array, must implement {@code Comparable<T>}
- */
+A generic class for finding the maximum element in an array of comparable elements.
+
+@param <T> the type of elements in the array, must implement {@code Comparable<T>}
+
 ```java
 public class MaxFinder<T extends Comparable<T>> {
     /**
@@ -68,12 +62,11 @@ public class Main {
 ```
 
 ### 📌 Generic Bounded Type Parameters
-/**
- * Type parameters can be bounded to restrict the types that can be used.
- * This method works with any number type, leveraging their common functionality.
- * 
- * @param <T> a type that extends Number
- */
+Type parameters can be bounded to restrict the types that can be used.
+This method works with any number type, leveraging their common functionality.
+
+@param <T> a type that extends Number
+
 ```java
 /**
  * Calculates the sum of elements in an array of numbers.
@@ -92,11 +85,10 @@ public static <T extends Number> double sum(T[] array) {
 ```
 
 ### 📌 Type Wildcards for Flexible API Design
-/**
- * Wildcards provide flexibility when working with parameterized types.
- * Upper-bounded wildcards (extends) allow reading from collections.
- * Lower-bounded wildcards (super) allow writing to collections.
- */
+Wildcards provide flexibility when working with parameterized types.
+Upper-bounded wildcards (extends) allow reading from collections.
+Lower-bounded wildcards (super) allow writing to collections.
+
 ```java
 /**
  * Calculates the sum of elements in a collection of numbers.
@@ -123,19 +115,13 @@ System.out.println(sumOfList(doubles));  // 7.5
 ---
 
 ## ⚙️ Multithreading for Interview Problems
-
-/**
- * Multithreading concepts demonstrate your understanding of concurrent programming,
- * which is valuable for system design questions and performance optimization discussions.
- * 
- * @since Java 1.0 (enhanced in Java 5 with java.util.concurrent)
- */
+Multithreading concepts demonstrate your understanding of concurrent programming,
+which is valuable for system design questions and performance optimization discussions.
 
 ### 📌 Thread Creation for Parallel Computation
-/**
- * Demonstrates how to divide work among multiple threads to achieve parallel computation.
- * This approach is useful for CPU-bound tasks where performance is critical.
- */
+Demonstrates how to divide work among multiple threads to achieve parallel computation.
+This approach is useful for CPU-bound tasks where performance is critical.
+
 ```java
 /**
  * Calculates the sum of an array by dividing the work among multiple threads.
@@ -219,12 +205,9 @@ static class SumCalculator implements Runnable {
 ```
 
 ### 📌 ExecutorService for Task Management
-/**
- * The ExecutorService framework provides a higher-level API for thread management,
- * making concurrent programming easier and less error-prone.
- * 
- * @since Java 5
- */
+The ExecutorService framework provides a higher-level API for thread management,
+making concurrent programming easier and less error-prone.
+
 ```java
 import java.util.concurrent.*;
 
@@ -278,19 +261,13 @@ public class ParallelSumExecutor {
 ---
 
 ## 🚨 Exception Handling in Technical Interviews
-
-/**
- * Proper exception handling demonstrates your attention to detail and ability to write robust code.
- * In technical interviews, handling edge cases and potential errors shows thoroughness.
- * 
- * @since Java 1.0 (enhanced in Java 7 with try-with-resources)
- */
+Proper exception handling demonstrates your attention to detail and ability to write robust code.
+In technical interviews, handling edge cases and potential errors shows thoroughness.
 
 ### 📌 Basic Exception Handling for Robust Solutions
-/**
- * Example of basic exception handling for file operations and data parsing,
- * gracefully handling common error conditions.
- */
+Example of basic exception handling for file operations and data parsing,
+gracefully handling common error conditions.
+
 ```java
 /**
  * Reads a comma-separated line of integers from a file into an array.
@@ -327,12 +304,9 @@ public static int[] readFileToArray(String filename) {
 ```
 
 ### 📌 Try-with-Resources for Clean Resource Management
-/**
- * The try-with-resources statement ensures that each resource is closed at the end of the statement.
- * This simplifies code by eliminating the need for explicit finally blocks for resource cleanup.
- * 
- * @since Java 7
- */
+The try-with-resources statement ensures that each resource is closed at the end of the statement.
+This simplifies code by eliminating the need for explicit finally blocks for resource cleanup.
+
 ```java
 /**
  * Reads all lines from a file into a list, using try-with-resources for automatic resource management.
@@ -357,10 +331,9 @@ public static List<String> readLines(String filename) {
 ```
 
 ### 📌 Custom Exceptions for Domain-Specific Errors
-/**
- * Custom exceptions improve code readability by clearly indicating specific error conditions
- * and providing more context than generic exceptions.
- */
+Custom exceptions improve code readability by clearly indicating specific error conditions
+and providing more context than generic exceptions.
+
 ```java
 /**
  * Custom exception for matrix operation errors.
@@ -420,20 +393,14 @@ public class MatrixOperations {
 ---
 
 ## 🔗 Java 8+ Features for Cleaner Interview Solutions
-
-/**
- * Modern Java features introduced in Java 8 and later versions enable more concise,
- * expressive, and maintainable code. Understanding these features can significantly
- * improve your code quality in technical interviews.
- * 
- * @since Java 8
- */
+Modern Java features introduced in Java 8 and later versions enable more concise,
+expressive, and maintainable code. Understanding these features can significantly
+improve your code quality in technical interviews.
 
 ### 📌 Lambda Expressions for Compact Code
-/**
- * Lambda expressions provide a concise way to represent anonymous functions,
- * making functional interfaces more readable and reducing boilerplate code.
- */
+Lambda expressions provide a concise way to represent anonymous functions,
+making functional interfaces more readable and reducing boilerplate code.
+
 ```java
 // Sorting a list of strings by length
 List<String> words = Arrays.asList("apple", "banana", "pear", "orange", "grapefruit");
@@ -454,10 +421,9 @@ Collections.sort(words, Comparator.comparingInt(String::length));
 ```
 
 ### 📌 Streams API for Data Processing
-/**
- * The Stream API provides a functional approach to processing collections of objects,
- * enabling more declarative and pipeline-oriented operations.
- */
+The Stream API provides a functional approach to processing collections of objects,
+enabling more declarative and pipeline-oriented operations.
+
 ```java
 /**
  * Demonstrates various Stream operations to process collections.
@@ -490,9 +456,7 @@ int parallelSum = numbers.parallelStream()
 ```
 
 #### Stream API Common Operations:
-/**
- * Common stream operations that are useful in technical interviews.
- */
+Common stream operations that are useful in technical interviews.
 ```java
 List<String> names = Arrays.asList("John", "Jane", "Adam", "Tom", "Alice", "Mike");
 
@@ -535,10 +499,8 @@ Map<Integer, List<String>> groupedByLength = names.stream()
 ```
 
 ### 📌 Method References for Concise Code
-/**
- * Method references provide a shorthand notation for lambda expressions that call a single method,
- * making code even more concise and readable.
- */
+Method references provide a shorthand notation for lambda expressions that call a single method,
+making code even more concise and readable.
 ```java
 // Collect strings in uppercase
 List<String> words = Arrays.asList("hello", "world", "java", "streams");
@@ -561,12 +523,8 @@ List<String> uppercaseRef = words.stream()
 ```
 
 ### 📌 Optional to Handle Null Values
-/**
- * Optional is a container object that may or may not contain a non-null value,
- * providing a clear API for dealing with potentially absent values without resorting to null checks.
- * 
- * @see java.util.Optional
- */
+Optional is a container object that may or may not contain a non-null value,
+providing a clear API for dealing with potentially absent values without resorting to null checks.
 ```java
 // Pre-Java 8 approach to find maximum value
 /**
@@ -620,10 +578,8 @@ try {
 ```
 
 ### 📌 ForEach and Consumer Interface
-/**
- * The forEach method and Consumer interface provide a more functional way to iterate
- * through collections and perform operations on each element.
- */
+The forEach method and Consumer interface provide a more functional way to iterate
+through collections and perform operations on each element.
 ```java
 // Pre-Java 8 approach to print elements
 for (String name : names) {
@@ -638,10 +594,8 @@ names.forEach(System.out::println);
 ```
 
 ### 📌 Default and Static Methods in Interfaces
-/**
- * Default and static methods in interfaces allow for interface evolution without breaking
- * existing implementations and provide utility methods related to the interface.
- */
+Default and static methods in interfaces allow for interface evolution without breaking
+existing implementations and provide utility methods related to the interface.
 ```java
 /**
  * An example interface demonstrating default and static methods.
@@ -694,13 +648,8 @@ boolean moving = Vehicle.isMoving(10.5);  // true
 ```
 
 ### 📌 CompletableFuture for Asynchronous Programming
-/**
- * CompletableFuture provides a powerful framework for asynchronous programming,
- * enabling non-blocking, callback-based operations and composition of multiple futures.
- * 
- * @since Java 8
- * @see java.util.concurrent.CompletableFuture
- */
+CompletableFuture provides a powerful framework for asynchronous programming,
+enabling non-blocking, callback-based operations and composition of multiple futures.
 ```java
 // Pre-Java 8 approach with Future and ExecutorService
 ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -748,14 +697,9 @@ combined.thenAccept(System.out::println); // Prints: Hello World
 ```
 
 ### 📌 Date and Time API
-/**
- * The Java 8 Date and Time API (java.time) provides a comprehensive set of classes
- * for handling dates, times, durations, and time zones in a thread-safe,
- * immutable manner.
- * 
- * @since Java 8
- * @see java.time package
- */
+The Java 8 Date and Time API (java.time) provides a comprehensive set of classes
+for handling dates, times, durations, and time zones in a thread-safe,
+immutable manner.
 ```java
 // Pre-Java 8 date handling (error-prone and mutable)
 Date date = new Date();
