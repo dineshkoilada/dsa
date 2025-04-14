@@ -1,164 +1,238 @@
-# Java Fundamentals
+# Java Fundamentals for Technical Interviews
 
 ## 🎯 Introduction
 
-This guide covers essential Java programming concepts that form the foundation for advanced topics like data structures, algorithms, and object-oriented programming. Understanding these core concepts allows you to write efficient, clean, and scalable code.
-
-The goal is to explain 20% of the most impactful concepts that will help you understand 80% of Java's practical usage.
+This guide provides the essential Java concepts you'll need for FAANG technical interviews. Mastering these fundamentals is critical for implementing data structures and algorithms efficiently during coding assessments.
 
 ---
 
-## 🔍 Functions and Methods
+## 🔍 Basic Syntax and Control Flow
 
-In Java, **functions** are known as **methods** and are used to perform specific tasks.
-
-### 📌 Syntax of a Method:
+### 📌 Variables and Data Types
 ```java
-public returnType methodName(parameters) {
-    // Method body
-    return value;
+// Primitive types
+int number = 42;
+double decimal = 3.14;
+char letter = 'A';
+boolean isActive = true;
+
+// Reference types
+String text = "Hello, FAANG!";
+Integer wrappedInt = Integer.valueOf(100);
+```
+
+### 📌 Conditional Statements
+```java
+// If-else statement
+if (number > 50) {
+    System.out.println("Number is greater than 50");
+} else if (number > 20) {
+    System.out.println("Number is between 21 and 50");
+} else {
+    System.out.println("Number is 20 or less");
+}
+
+// Switch statement
+switch (letter) {
+    case 'A':
+        System.out.println("Excellent");
+        break;
+    case 'B':
+        System.out.println("Good");
+        break;
+    default:
+        System.out.println("Other grade");
 }
 ```
 
-### ✅ Example:
+### 📌 Loops - Essential for Iterative Algorithms
 ```java
-public class Calculator {
-    public int add(int a, int b) {
-        return a + b;
-    }
+// For loop (most common in array iterations)
+int[] array = {1, 2, 3, 4, 5};
+for (int i = 0; i < array.length; i++) {
+    System.out.println(array[i]);
 }
-```
 
-- **public**: Access modifier
-- **int**: Return type
-- **add**: Method name
-- **(int a, int b)**: Parameters
+// Enhanced for loop (cleaner for collections)
+for (int element : array) {
+    System.out.println(element);
+}
 
-### 🔄 Calling a Method:
-```java
-Calculator calc = new Calculator();
-int result = calc.add(5, 3);
-System.out.println("Sum: " + result);
+// While loop (useful for unknown iterations)
+int count = 0;
+while (count < 5) {
+    System.out.println(count);
+    count++;
+}
+
+// Do-while loop (executes at least once)
+int x = 0;
+do {
+    System.out.println(x);
+    x++;
+} while (x < 3);
 ```
 
 ---
 
-## 🔀 Method Overloading and Overriding
+## 🔧 Arrays and Strings (Common Interview Topics)
 
-### 📌 Method Overloading
-Creating multiple methods with the same name but different parameters.
-
+### 📌 Arrays
 ```java
-public class Printer {
-    public void print(String text) {
-        System.out.println(text);
-    }
-    public void print(int number) {
-        System.out.println(number);
-    }
-}
-```
+// Declaration and initialization
+int[] numbers = new int[5]; // Creates array of size 5 with default values (0)
+int[] primes = {2, 3, 5, 7, 11}; // Initialize with values
 
-### 📌 Method Overriding
-Rewriting a parent class's method in a child class to provide specific behavior.
-
-```java
-class Animal {
-    void sound() {
-        System.out.println("Animal makes a sound");
-    }
-}
-
-class Dog extends Animal {
-    @Override
-    void sound() {
-        System.out.println("Dog barks");
-    }
-}
-```
-
-### 🎯 Why Use Them?
-- **Overloading** improves code readability.
-- **Overriding** enables runtime polymorphism.
-
----
-
-## 🏷️ Anonymous Classes and Lambdas
-
-### 📌 Anonymous Classes
-Used to declare and instantiate a class simultaneously.
-
-```java
-Runnable task = new Runnable() {
-    @Override
-    public void run() {
-        System.out.println("Running an anonymous class");
-    }
+// Multi-dimensional arrays
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
 };
-task.run();
+
+// Common operations
+System.out.println("Length: " + primes.length);
+System.out.println("Element at index 2: " + primes[2]); // Output: 5
+
+// Iterating through 2D array (common in matrix problems)
+for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[i].length; j++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}
 ```
 
-### 📌 Lambda Expressions (Introduced in Java 8)
-Short and concise way of writing functions.
-
+### 📌 Strings
 ```java
-Runnable lambdaTask = () -> System.out.println("Running a lambda expression");
-lambdaTask.run();
-```
+// String creation
+String s1 = "Hello";
+String s2 = new String("World");
+String s3 = s1 + " " + s2; // Concatenation
 
-### ✅ Benefits:
-- Reduces boilerplate code.
-- Makes the code more readable and concise.
+// Common operations (frequent in interviews)
+System.out.println("Length: " + s1.length());
+System.out.println("Character at index 1: " + s1.charAt(1)); // Output: e
+System.out.println("Substring: " + s1.substring(1, 4)); // Output: ell
+
+// String comparison
+boolean areEqual = s1.equals("Hello"); // true (compares content)
+boolean isSameRef = (s1 == "Hello");   // may be true (compares reference)
+
+// String immutability (important concept)
+s1 = s1 + "!"; // Creates a new string object
+```
 
 ---
 
-## 🔗 Code Examples
+## 🧩 Functions and Methods
 
-### Example 1: Simple Calculator with Overloading
+### 📌 Method Declaration
 ```java
-public class Calculator {
+public class MathUtil {
+    // Basic method
     public int add(int a, int b) {
         return a + b;
     }
-    public double add(double a, double b) {
-        return a + b;
+
+    // Method with array parameter (common in interviews)
+    public int findMax(int[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array cannot be empty");
+        }
+
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
+    // Method with variable arguments
+    public double average(int... numbers) {
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return (double) sum / numbers.length;
     }
 }
 ```
 
-### Example 2: Polymorphism Through Overriding
+### 📌 Recursion (Critical for Many Algorithms)
 ```java
-class Vehicle {
-    void move() {
-        System.out.println("Vehicle is moving");
+public class Recursion {
+    // Factorial calculation
+    // This method calculates the factorial of a given number `n` using recursion.
+    // The base case is when `n` is 0 or 1, where the factorial is 1.
+    // For other values, it recursively multiplies `n` by the factorial of `n - 1`.
+    public int factorial(int n) {
+        // Base case
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        // Recursive case
+        return n * factorial(n - 1);
     }
-}
 
-class Car extends Vehicle {
-    @Override
-    void move() {
-        System.out.println("Car is driving");
+    // Fibonacci - often asked in interviews
+    // This method computes the nth Fibonacci number using recursion.
+    // The base cases are when `n` is 0 or 1, returning `n` directly.
+    // For other values, it recursively sums the Fibonacci numbers of `n - 1` and `n - 2`.
+    public int fibonacci(int n) {
+        // Base cases
+        if (n <= 1) {
+            return n;
+        }
+        // Recursive case
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
-}
 
-public class Main {
-    public static void main(String[] args) {
-        Vehicle myCar = new Car();
-        myCar.move();
+    // Binary search using recursion
+    // This method performs a binary search on a sorted array to find the target element.
+    // It takes the array, target value, and the current search bounds (`left` and `right`) as inputs.
+    // The base case is when `left` exceeds `right`, indicating the target is not found.
+    // It calculates the middle index and compares the target with the middle element.
+    // Depending on the comparison, it recursively searches in the left or right half of the array.
+    public int binarySearch(int[] array, int target, int left, int right) {
+        // Base case: element not found
+        if (left > right) {
+            return -1;
+        }
+
+        int mid = left + (right - left) / 2;
+
+        // Check if the middle element is the target
+        if (array[mid] == target) {
+            return mid;
+        }
+
+        // Recursive case: search in the left or right half
+        if (array[mid] > target) {
+            // Search in left half
+            return binarySearch(array, target, left, mid - 1);
+        } else {
+            // Search in right half
+            return binarySearch(array, target, mid + 1, right);
+        }
     }
+    ```
 }
 ```
 
 ---
 
-## 📚 Key Takeaways
+## 📚 Key Takeaways for Interviews
 
-1. **Methods** encapsulate reusable code blocks.
-2. **Overloading** allows methods with the same name but different parameters.
-3. **Overriding** enables subclasses to provide specific implementations.
-4. **Anonymous classes** and **lambdas** simplify code, especially for functional programming.
+1. **Master loop variations** - Know when to use each type of loop
+2. **Array manipulations** - Be comfortable with indexing, traversal, and nested arrays
+3. **String operations** - Understand string immutability and common methods
+4. **Method design** - Write clean methods with proper parameter validation
+5. **Recursion patterns** - Recognize when to use recursion and how to define base cases
 
 ---
 
-Up next: Dive deeper into **Object-Oriented Programming Concepts (OOPS)** to understand how Java leverages classes, objects, inheritance, and more!
+Up next: Dive into **Object-Oriented Programming Concepts** which provide the foundation for implementing complex data structures.
 
