@@ -37,6 +37,59 @@ Before diving into code, take a moment to understand the problem fully. Here’s
 
 ---
 
+## 🧠 When to Use the Two Pointers Pattern
+
+The Two Pointers pattern is powerful and can be applied in many different scenarios beyond just sorted arrays. Here's a comprehensive list of use cases:
+
+### ✅ Traditional Use Cases (Requiring Sorted Arrays)
+- **Finding pairs with a target sum** (Two Sum problem on sorted arrays)
+- **Three Sum / Four Sum** problems (finding triplets/quadruplets that sum to target)
+- **Removing duplicates** from sorted arrays in-place
+- **Partition problems** (Dutch National Flag problem)
+
+### ✅ Use Cases Without Requiring Sorting
+1. **Position-Dependent Problems**
+   - Container With Most Water (positions determine the width component)
+   - Trapping Rain Water (the positional relationship between heights matters)
+   - Palindrome verification (checking if a string reads the same forwards and backwards)
+
+2. **In-place Manipulation Problems**
+   - Reversing arrays or strings in-place
+   - Moving zeros to the end while preserving order of non-zero elements
+   - Merging two sorted arrays into one
+   - Quick sort's partition operation
+
+3. **Fast and Slow Pointers (Same Direction)**
+   - Detecting cycles in linked lists (Floyd's Cycle-Finding Algorithm)
+   - Finding the middle element of a linked list in one pass
+   - Finding the k-th element from the end in one pass
+
+4. **Subarray/Substring Problems with Special Properties**
+   - Finding subarrays with specific properties where relative ordering matters
+   - String matching problems where positions matter (e.g., comparing with wildcards)
+   - Finding longest palindromic substring
+
+5. **Window-Based Problems**
+   - Finding minimum window substring containing all characters from another string
+   - Maximum/minimum length subarray with specific properties
+
+6. **Multi-Array Processing**
+   - Merging k sorted arrays (with k pointers)
+   - Intersection and union of multiple sorted arrays
+
+7. **Cyclic Array Problems**
+   - Problems where the array is treated as circular
+
+### ✅ Why These Work Without Sorting
+- **Clear Movement Strategy**: Having a definite rule for which pointer to move next
+- **Completeness**: The approach guarantees covering all possible answers
+- **Position-Value Relationship**: When the relative position between elements is crucial
+- **Direction of Movement**: When moving in a specific direction guarantees finding the optimal solution
+
+Understanding these diverse applications allows you to recognize when the Two Pointers pattern can be applied even in situations where the traditional prerequisites (sorted, unique elements) don't apply.
+
+---
+
 ## 🏁 Problem-Solving Template
 
 ### ✅ **1. Define the Problem Clearly**
@@ -243,6 +296,26 @@ public class ContainerWithMostWater {
     }
 }
 ```
+
+### 🔍 **Why Two Pointers Work Without Sorting**
+While many two-pointer problems require sorted arrays, this problem is a special case where sorting isn't needed:
+
+1. **Position-Dependent Calculation**:
+   - The area formula depends on both height and width: `area = min(height[left], height[right]) * (right - left)`
+   - Sorting would destroy the positional relationship needed for the width calculation
+
+2. **Optimal Movement Strategy**:
+   - Moving the pointer with the shorter height is always the optimal choice
+   - This is because the width decreases with each step, so our only chance to increase area is to find a taller height
+
+3. **Complete Coverage**:
+   - Starting from the widest possible container and working inward guarantees we consider all potential maximum containers
+
+4. **Handles Duplicates Naturally**:
+   - Duplicate heights don't affect the algorithm's correctness
+   - Each potential container is evaluated exactly once based on its position
+
+This problem demonstrates that the two-pointer pattern can be effective even when the array is neither sorted nor contains unique elements, as long as there's a clear strategy for pointer movement that guarantees finding the optimal solution.
 
 ### ⏱️ **Time and Space Complexity:**
 - **Time:** O(n) — The loop makes at most `n` iterations since each step brings the two pointers closer together.
