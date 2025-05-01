@@ -75,7 +75,33 @@ This repository is organized by problem-solving patterns such as:
 - **Heap / Priority Queue**: Efficiently access the largest or smallest element.
 - **Bit Manipulation**: Solve problems involving binary representations and operations.
 - **Trie (Prefix Tree)**: Efficiently store and search strings, often used for autocomplete features.
-- **Graph Algorithms**: Cover advanced algorithms like Dijkstra’s and Floyd-Warshall for shortest paths.
+- **Graph Algorithms**: Cover advanced algorithms like Dijkstra's and Floyd-Warshall for shortest paths.
+
+### 🔄 Sorting Algorithms
+- **Quick Sort**:
+  - Easy: Implementation on small arrays
+  - Medium: Optimizing pivot selection
+  - Hard: Handling nearly sorted arrays and duplicates
+- **Heap Sort**:
+  - Easy: Basic implementation
+  - Medium: Building a min/max heap
+  - Hard: Optimizing for specific use cases
+- **Counting Sort**:
+  - Easy: Sorting small integer ranges
+  - Medium: Implementing stable counting sort
+  - Hard: Handling negative numbers and large ranges
+- **Radix Sort**:
+  - Easy: Sorting integers
+  - Medium: Implementing for different bases
+  - Hard: Sorting strings and floating-point numbers
+- **Bucket Sort**:
+  - Easy: Uniform distributions
+  - Medium: Non-uniform distributions
+  - Hard: Dynamic bucket allocation
+- **Tim Sort**:
+  - Easy: Understanding the algorithm
+  - Medium: Basic implementation
+  - Hard: Optimizing galloping mode and merge strategy
 
 Each pattern folder contains:
 - A clear explanation of the concept.
