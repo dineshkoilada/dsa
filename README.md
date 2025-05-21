@@ -59,23 +59,66 @@ Understanding these complexities is crucial for writing optimal code and succeed
 
 ## 🔍 What Will You Find in This Repository?
 
-This repository is organized by problem-solving patterns such as:
+This repository is organized by problem-solving patterns, grouped for easier learning and practice:
 
+### 1. Array & String Patterns
 - **Two Pointers**: Efficiently narrow down solutions using two pointers.
 - **Sliding Window**: Handle problems involving subarrays or substrings.
-- **Fast & Slow Pointers**: Detect cycles and middle elements in linked lists.
-- **Binary Search**: Find elements in sorted arrays efficiently.
+- **Prefix Sum / Suffix Sum**: Precompute sums for efficient range queries.
+- **Sorting Algorithms**: Implement and use various sorting techniques.
+- **Hashing & Frequency Counting**: Use hash maps/sets for fast lookups and counting.
+- **String Manipulation & Pattern Matching**: Work with substrings, anagrams, and regular expressions.
+- **Intervals**: Handle problems involving overlapping intervals, merging, or scheduling.
+- **Cyclic Sort**: Sort numbers when elements are in a known range (e.g., 1 to n).
+
+### 2. Linked List Patterns
+- **Fast & Slow Pointers (Tortoise and Hare)**: Detect cycles and middle elements in linked lists.
+- **Linked List Manipulation**: Solve problems involving singly or doubly linked lists.
+- **Reversal Patterns**: Reverse entire or part of a linked list.
+
+### 3. Stack & Queue Patterns
+- **Stack-based Problems (Monotonic Stack)**: Use stacks to solve problems like Next Greater Element, histogram area, etc.
+- **Queue-based Problems**: Use queues for level order traversal, sliding window maximum, etc.
+- **Deque (Double-Ended Queue) Patterns**: Efficiently solve problems requiring access from both ends (e.g., sliding window maximum).
+
+### 4. Tree & Graph Patterns
 - **Depth-First Search (DFS)**: Explore tree or graph structures deeply.
 - **Breadth-First Search (BFS)**: Explore all neighbors before diving deeper.
-- **Dynamic Programming (DP)**: Solve complex problems by breaking them into simpler subproblems.
-- **Backtracking**: Explore all possibilities for problems like permutations and combinations.
-- **Greedy Algorithms**: Make the most optimal choice at each step to ensure global optimization.
+- **Graph Traversal (DFS/BFS/Topological Sort)**: Explore and process nodes in graphs.
 - **Union Find (Disjoint Set Union)**: Efficiently handle dynamic connectivity problems.
-- **Topological Sort**: Handle problems on directed acyclic graphs (DAGs) to determine order of execution.
-- **Heap / Priority Queue**: Efficiently access the largest or smallest element.
-- **Bit Manipulation**: Solve problems involving binary representations and operations.
+- **Shortest Path Algorithms (Dijkstra, Floyd-Warshall, Bellman-Ford, A*)**: Find shortest paths in graphs.
+- **Minimum Spanning Tree (Kruskal, Prim)**: Connect all nodes in a graph with minimum cost.
+- **Segment Tree / Binary Indexed Tree (Fenwick Tree)**: Efficiently perform range queries and updates.
 - **Trie (Prefix Tree)**: Efficiently store and search strings, often used for autocomplete features.
-- **Graph Algorithms**: Cover advanced algorithms like Dijkstra's and Floyd-Warshall for shortest paths.
+- **Matrix Traversal**: Navigate and process elements in 2D arrays.
+- **Tree Traversal Variants**: Inorder, Preorder, Postorder, Level Order traversals.
+- **Lowest Common Ancestor (LCA)**: Find the lowest common ancestor in trees.
+
+### 5. Recursion & Backtracking Patterns
+- **Recursion**: Solve problems by breaking them into smaller subproblems.
+- **Backtracking**: Explore all possibilities for problems like permutations and combinations.
+- **Backtracking with Memoization**: Optimize backtracking by storing results.
+- **Divide and Conquer**: Break problems into smaller independent subproblems.
+- **Subsets & Permutations**: Generate all possible combinations or arrangements.
+- **State Space Search**: Explore all possible states (e.g., N-Queens, Sudoku).
+
+### 6. Dynamic Programming & Greedy
+- **Dynamic Programming (DP)**: Solve complex problems by breaking them into simpler subproblems and storing results.
+- **Greedy Algorithms**: Make the most optimal choice at each step to ensure global optimization.
+- **Tabulation & Memoization**: Bottom-up and top-down DP approaches.
+- **Knapsack Patterns**: Solve problems involving selection under constraints.
+
+### 7. Math & Miscellaneous Patterns
+- **Bit Manipulation**: Solve problems involving binary representations and operations.
+- **Counting & Combinatorics**: Solve problems involving counting, arrangements, or probability.
+- **Number Theory (Primes, GCD, etc.)**: Solve problems involving mathematical properties.
+- **Top K Elements (Heap/Priority Queue)**: Efficiently access the largest or smallest element or maintain top K elements.
+- **Sweep Line Algorithm**: Solve interval and geometry problems efficiently.
+- **Reservoir Sampling**: Randomly select k items from a stream of unknown size.
+- **Randomized Algorithms**: Use randomness to solve problems efficiently (e.g., QuickSelect).
+- **Game Theory Patterns**: Solve problems involving optimal moves (e.g., Minimax, NIM game).
+
+This structure helps you focus on one group at a time, making your practice more effective and memorable.
 
 ### 🔄 Sorting Algorithms
 - **Quick Sort**:
