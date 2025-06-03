@@ -1,6 +1,5 @@
 from typing import List
 
-
 def pair_two_sum(nums: List[int], target: int) -> List[int]:
     """
     Finds two numbers in a sorted array that add up to the target sum using the two-pointer technique.
@@ -15,6 +14,12 @@ def pair_two_sum(nums: List[int], target: int) -> List[int]:
     Example:
         >>> pair_two_sum([2, 7, 11, 15], 9)
         [1, 2]
+
+    Time Complexity:
+        O(n), where n is the number of elements in nums. Each element is visited at most once by either pointer.
+
+    Space Complexity:
+        O(1), as the algorithm uses only a constant amount of extra space regardless of input size.
     """
     left, right = 0, len(nums) - 1
     while left < right:
