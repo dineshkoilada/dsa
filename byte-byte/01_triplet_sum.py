@@ -21,21 +21,21 @@ def triplet_sum(nums: List[int], target: int) -> List[List[int]]:
     Space Complexity:
         O(k), where k is the number of triplets found (for the result list).
     """
-    nums.sort()
+    nums_sorted = sorted(nums)
     result = []
-    n = len(nums)
+    n = len(nums_sorted)
     for i in range(n - 2):
-        if i > 0 and nums[i] == nums[i-1]:
+        if i > 0 and nums_sorted[i] == nums_sorted[i-1]:
             continue
         left, right = i + 1, n -1
-        current_target = target - nums[i]
+        current_target = target - nums_sorted[i]
         while left < right:
-            current_sum = nums[left] + nums[right]
+            current_sum = nums_sorted[left] + nums_sorted[right]
             if current_sum == current_target:
-                result.append([nums[i], nums[left], nums[right]])
-                while left < right and nums[left] == nums[left + 1]:
+                result.append([nums_sorted[i], nums_sorted[left], nums_sorted[right]])
+                while left < right and nums_sorted[left] == nums_sorted[left + 1]:
                     left += 1
-                while left < right and nums[right] == nums[right - 1]:
+                while left < right and nums_sorted[right] == nums_sorted[right - 1]:
                     right -= 1
                 left += 1
                 right -= 1
